@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}وظائف في فلسطين{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/jobs.css') }}">
+{% endblock %}
+{% block content %}
+<hr class="rounded">
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <div class="heading">
+                <a href="{{jobs_articles[0]['baseurl']}}" target="_blank"><span
+                        class="ellip ellip-line">{{jobs_articles[0]['webname']}}</span></a>
+            </div>
+            <div class="scrollable ">
+                <h3>
+                    <p class="list-style">
+                    <ul>
+                        {% for article in jobs_articles %}
+                        <li>
+                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="heading">
+                <a href="{{tech_jobs_articles[0]['baseurl']}}" target="_blank"><span
+                        class="ellip ellip-line">{{tech_jobs_articles[0]['webname']}}</span></a>
+            </div>
+            <div class="scrollable ">
+                <h3>
+                    <p class="list-style">
+                    <ul>
+                        {% for article in tech_jobs_articles %}
+                        <li>
+                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

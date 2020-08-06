@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}اشترك معنا{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/subscribe.css') }}">
+{% endblock %}
+{% block content %}
+
+<form  method="POST" action="{{ url_for('subscribe.subscribe') }}"> 
+    <div class="container">
+        <h2>اشترك في نشرتنا البريدية</h2>
+        <p>سيصلك بريد الكتروني باخر الاخبار</p>
+    </div>
+
+    <div class="container" style="background-color:white">
+        <input type="text" placeholder="الاسم" name="name" required>
+        <input type="email" placeholder="البريد الالكتروني" name="mail" required>
+        <select title="أختر الموقع" name='websites'>
+            <optgroup label="أخبار">
+            <option value="maan" selected>وكالة معا الاخبارية</option>
+            <option value="wafa" >وكالة وفا الاخبارية</option>
+            </optgroup>
+            <optgroup label="صحة">
+            <option value="moh" >وزارة الصحة الفلسطينية</option>
+            <option value="moh">الصحة العالمية</option>
+            </optgroup>
+        </select>
+    </div>
+
+    <div class="container">
+        <input type="submit" value="اشترك">
+    </div>
+    <div>
+
+        
+
+        <span>{{result}}</span>
+
+
+    </div>
+</form> 
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% block title %}أخبار صحية{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+{% block content %}
+<hr class="rounded">
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <div class="heading">
+                <a href="{{who_articles[0]['baseurl']}}" target="_blank"><span
+                        class="ellip ellip-line">{{who_articles[0]['webname']}}</span></a>
+               
+            </div>
+            <div class="scrollable ">
+                <h3>
+                    <p class="list-style">
+                    <ul>
+                        {% for article in who_articles %}
+                        <li>
+                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="heading">
+                <a href="{{maan_health[0]['baseurl']}}" target="_blank"><span
+                        class="ellip ellip-line">{{maan_health[0]['webname']}}</span></a>
+            </div>
+            <div class="scrollable ">
+                <h3>
+                    <p class="list-style">
+                    <ul>
+                        {% for article in maan_health %}
+                        <li>
+                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="heading">
+                <a href="{{bbc_articles[0]['baseurl']}}" target="_blank"><span
+                        class="ellip ellip-line">{{bbc_articles[0]['webname']}}</span></a>
+            </div>
+            <div class="scrollable ">
+                <h3>
+                    <p class="list-style">
+                    <ul>
+                        {% for article in bbc_articles %}
+                        <li>
+                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="heading">
+                <a href="{{moh_articles[0]['baseurl']}}" target="_blank"><span
+                        class="ellip ellip-line">{{moh_articles[0]['webname']}}</span></a>
+            </div>
+            <div class="scrollable ">
+                <h3>
+                    <p class="list-style">
+                    <ul>
+                        {% for article in moh_articles %}
+
+                        <li>
+                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
+                        </li>
+
+                        {% endfor %}
+                    </ul>
+                    </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

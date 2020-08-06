@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Alaa' Omar">
+        <meta name='discrption' content="Content Aggregator">
+        <meta http-equiv="refresh" content="600">
+        <title>{% block title %}{% endblock %} - My Content Aggregator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% endblock %}
+</head>
+
+<body>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+<div class="header" id="myHeader">
+    <h2>كل ما يهمك .... في مكان واحد</h2>
+</div>
+
+ <div class="topnav">
+    <a class="active" href="index">الرئيسية</a>
+    {%for key,val in menus_items.items()%} 
+    <a href="{{key}}">{{val}}</a>
+    {%endfor%}
+</div> 
+</div>
+<div id="content">{% block content %}{% endblock %}</div>
+<div id="footer">
+    {% block footer %}
+    &copy; Copyright 2020 by <a href="https://eng-aomar.github.io/">Alaa' Omar</a>.
+    {% endblock %}
+</div>
+</body>
+
+</html>

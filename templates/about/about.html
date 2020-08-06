@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block title %}تواصل معنا{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% block content %}
+<div class="about-section">
+    <h1>من نحن</h1>
+    <p>تم تطوير هذا الموقع كمشروع نهائي لدورة بايثون</p>
+    <p>يعمل هذا الموقع على تجميع اخر المقالات المنشورة من عدة مواقع موثقة وذات شهرة محلية، حيث يتيح الموقع للمستخدمين تصفح مواقعهم المفضلة من خل صفحة الكترونية واحدة</p>
+</div>
+
+<!-- <h2 style="text-align:center">فريق العمل</h2> -->
+
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <img src="../static/imgs/alaa.png" alt="alaa" style="width:100%">
+            <div class="container">
+                <h2>Alaa' Omar</h2>
+                <p class="title">Software Engineer</p>
+                <p class='bio'>Alaa’ Omar is a software engineer, and a master student who is studying software engineering at Birzeit
+                    university. Accomplished Software engineer with many years of experience in software development,
+                    programming, Design and analysis,
+                    Extensive background in full life cycle of software development process including requirements gathering,
+                    design,
+                    coding, testing, debugging and maintenance</p>
+                <!-- <p> <a mailto ='alaa.omer2009@gmail.com'>Email: alaa.omer2009@gmail.com</a> </p> -->
+                <!-- <a href='https://eng-aomar.github.io/' target="_blank">https://eng-aomar.github.io/</a> -->
+                <div class="icon-bar">
+                    <a href="https://www.facebook.com/alaa.omer" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/aomar85" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/alaa-omar-22105717/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    <a href="alaa.omer2009@gmail.com" class="google"  target="_blank"><i class="fa fa-google"></i></a>
+                    <a href="https://eng-aomar.github.io" class="github"  target="_blank"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clmn">
+        <div class="crd">
+        <div class="cnot">
+            <div style="text-align:center">
+                <h2>تواصل معنا</h2>
+                <p>إذا كان لديك استفسار، يمكنك ترك رسالة أو ملاحظة وسنقوم بالرد  في أقرب فرصة</p>
+            </div>
+            <div class="rw">
+                <div class="clmn">
+                    <img src="../static/imgs/contact.png" style="width:100%">
+                </div>
+                <div class="clmn">
+                    <form method="POST" action="{{ url_for('.about') }}">
+                        <label for="fname">الاسم الأول</label>
+                        <input type="text" id="fname" name="firstname" placeholder="اسمك .." required>
+                        <label for="lname">الاسم الأخير</label>
+                        <input type="text" id="lname" name="lastname" placeholder="الاسم الاخير .." required>
+                        <label for="subject">الموضوع</label>
+                        <textarea id="subject" name="subject" placeholder="اكتب شيئاً" style="height:170px" required></textarea>
+                        <input type="submit" value="أرسل">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

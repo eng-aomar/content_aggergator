@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+{% block title %}أخبار كورونا{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/covid.css') }}">
+{% endblock %}
+{% block content %}
+<style>
+    #myTable {
+        display: table;
+        border: 1px solid black;
+        width: 300px;
+        border-collapse:separate; 
+        margin-top: 5px;
+    }
+
+    #myTable>* {
+        display: table-cell;
+        width: 33.33%;
+    }
+    span{
+        padding :5px;
+        font-size: large;
+    }
+</style>
+<hr class="rounded">
+<div class="row">
+    <div class= "clmn">
+        
+        <div >
+            <div >
+                <p style="font-size: larger; font-weight: bold;">إحصائيات كورونا في فلسطين</p>
+            </div>
+        </div>
+        <div >
+                    
+                    {% for key, val in palestine_summary.items()%}
+                    <div id='myTable' >
+                        <span >{{key}}</span>
+                        <span>{{val}}</span>
+                    </div>
+                    {% endfor %}
+        </div>
+    </div>
+</div>
+<hr class="rounded">
+<div class="row">
+    <div class="column1">
+        <div class="card">
+            <div class="heading">
+                <a href="{{bbc_corona_articles[0]['baseurl']}}" target="_blank"><span
+                        class="ellip ellip-line">{{bbc_corona_articles[0]['webname']}}</span></a>
+            </div>
+            <div class="scrollable ">
+                <h3>
+                    <p class="list-style">
+                    <ul>
+                        {% for article in bbc_corona_articles%}
+                        <li>
+                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="column1">
+        <div class="card">
+            <div class="heading">
+                <a href="{{who_corona_articles[0]['baseurl']}}" target="_blank"><span
+                        class="ellip ellip-line">{{who_corona_articles[0]['webname']}}</span></a>
+            </div>
+            <div class="scrollable ">
+                <h3>
+                    <p class="list-style">
+                    <ul>
+                        {% for article in who_corona_articles%}
+                        <li>
+                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="column1">
+        <div class="card">
+            <div class="heading">
+                <a href="{{bbc_corona_articles[0]['baseurl']}}" target="_blank"><span
+                        class="ellip ellip-line">{{bbc_corona_articles[0]['webname']}}</span></a>
+            </div>
+            <div class="scrollable ">
+                <h3>
+                    <p class="list-style">
+                    <ul>
+                        {% for article in bbc_corona_articles%}
+                        <li>
+                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="column">
+        <div class="card">
+            <div class="heading">
+                <a href="{{bbc_corona_articles[0]['baseurl']}}" target="_blank"><span
+                        class="ellip ellip-line">{{bbc_corona_articles[0]['webname']}}</span></a>
+            </div>
+            <div class="scrollable ">
+                <h3>
+                    <p class="list-style">
+                    <ul>
+                        {% for article in bbc_corona_articles%}
+                        <li>
+                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    </p>
+                </h3>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+{% endblock %}
