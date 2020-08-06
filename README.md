@@ -15,7 +15,7 @@ SendGrid : for email sending
 BluePrint : Functional Structuring of files
 Concurent.futures: to achive faster execution time using multithreading. 
 
-#Technical Details
+# Technical Details
 
 The main objective of this project idea is to aggregate content. First, you need to know what sites you’ll want the Content Aggregator to get content from. Then, you can use libraries such as requests for sending HTTP requests and BeautifulSoup to parse and scrape the necessary content from the sites.
 
