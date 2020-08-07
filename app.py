@@ -24,12 +24,12 @@ app.register_blueprint(local_blueprint)
 app.register_blueprint(global_blueprint)
 app.register_blueprint(jobs_blueprint)
 
-app.config.from_object('config')
-app.config.from_object(config['development'])
-config['development'].init_app(app)
+# app.config.from_object('config')
+# app.config.from_object(config['development'])
+# config['development'].init_app(app)
 
 
-print(f'ENV is set to: {app.config["ENV"]}')
+# print(f'ENV is set to: {app.config["ENV"]}')
 
 @app.context_processor
 def load_menus():
