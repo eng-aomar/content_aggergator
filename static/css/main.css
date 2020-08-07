@@ -66,6 +66,7 @@ font-weight: normal;}
   background-color: black;
   color: white;
   text-align: center;
+  direction: ltr;
   
 }
 #footer a {
