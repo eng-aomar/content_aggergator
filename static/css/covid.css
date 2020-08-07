@@ -160,3 +160,20 @@ hr.rounded {
     font-size: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column1 {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .clmn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
