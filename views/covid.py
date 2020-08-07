@@ -25,7 +25,7 @@ def load_covid():
         f3 = executer.submit(WhoCovidScraper.get_content)
         palestine_summary = f1.result()
         bbc_corona_articles = f2.result()
-        who_corona_articles = f2.result()
+        who_corona_articles = f3.result()
     finish = time.perf_counter()  # end timer
     print(f"Finished in {round(finish-start,2)} seconds")
     return render_template("covid/covid19.html",
