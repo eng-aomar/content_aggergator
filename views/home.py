@@ -9,7 +9,7 @@ from MOHScraper import MOHScraper,CovidPalestine
 from RTScraper import RTScraper
 from WafaScraper import WafaScraper
 from WhoScraper import WhoScraper
-
+from CovidScraper import BBCCovidScraper
 from DBConnection import Mongodb
 
 from CovidScraper import BBCCovidScraper, WhoCovidScraper
@@ -48,7 +48,7 @@ def get_data():
         f1 = executer.submit(WafaScraper.get_content)
         f2 = executer.submit(MaanNewsScraper.get_content)
         f3 = executer.submit(RTScraper.get_content)
-        f4 = executer.submit(MOHScraper.get_content)
+        f4 = executer.submit(BBCCovidScraper.get_content)
         f5 = executer.submit(WhoScraper.get_content)
         f6 = executer.submit(BBCScraper.get_content)
         f7 = executer.submit(MaanHealthScraper.get_content)

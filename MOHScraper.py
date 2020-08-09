@@ -18,7 +18,7 @@ class MOHScraper:
             soup = BeautifulSoup(response.text, 'html.parser')
             response.close()
             articels_info = soup.find_all(
-                'div', class_='col-8 sp-thumbnail-text')
+                'i', class_='fa fa-circle font-color')
  
             MOHScraper.title = soup.find('title').string
             articles = MOHScraper.fetch_articles(articels_info)
@@ -38,7 +38,7 @@ class MOHScraper:
         data = []
         for pt in articels_info:
             datum = {}
-            name = pt.find('div', {'class': 'sp-thumbnail-title'})
+            name = pt.find('a', {'class': 'sp-thumbnail-title'})
             if name:
                 title =name.string
             link = pt.find('a')

@@ -4,7 +4,7 @@ from requests.exceptions import HTTPError
 from WhoScraper import WhoScraper
 from MaanScraper import MaanHealthScraper
 from MOHScraper import MOHScraper
-from CovidScraper import BBCCovidScraper
+from CovidScraper import BBCCovidScraper, WhoCovidScraper
 import concurrent.futures
 import time
 health_blueprint = Blueprint('health', __name__)
@@ -17,7 +17,7 @@ def health():
     with concurrent.futures.ThreadPoolExecutor() as executer:
         f1 = executer.submit(WhoScraper.get_content)
         f2 = executer.submit(MaanHealthScraper.get_content)
-        f3 = executer.submit(MOHScraper.get_content)
+        f3 = executer.submit(WhoCovidScraper.get_content)
         f4 = executer.submit(BBCCovidScraper.get_content)
         who_articles = f1.result()
         maan_health = f2.result()
