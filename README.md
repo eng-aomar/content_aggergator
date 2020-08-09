@@ -81,7 +81,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/github_username/repo/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/eng-aomar/content_aggergator/issues) for a list of proposed features (and known issues).
 
 
 
