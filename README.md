@@ -1,7 +1,8 @@
 # Content aggergator 
-A content Aggregator website using python flask
+
 ![License](http://img.shields.io/:license-mit-blue.svg)
 
+A content Aggregator website using python flask
 A content aggregator fetches information from various places online and gathers all of that information in one place. Therefore, you don’t have to visit multiple sites to get the latest info: one website is enough.
 
 With the content aggregator, all of the latest information can be gotten from one site that aggregates all the content. People can see the posts that interest them and can decide to find out more about them without traipsing all over the internet.
