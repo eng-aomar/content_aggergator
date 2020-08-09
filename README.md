@@ -33,7 +33,8 @@ Concurent.futures: to achive faster execution time using multithreading.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Content Aggregator][Main-screan Desktop Layout]](https://github.com/eng-aomar/content_aggergator/blob/master/ca.jpg)
+[![Content Aggreagtor][Main-screan Mobile Layout]](https://github.com/eng-aomar/content_aggergator/blob/master/WhatsApp%20Image%202020-08-09%20at%2011.20.08%20AM.jpeg)
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
