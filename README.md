@@ -15,10 +15,93 @@ SendGrid : for email sending
 BluePrint : Functional Structuring of files
 Concurent.futures: to achive faster execution time using multithreading. 
 
-# Technical Details
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-The main objective of this project idea is to aggregate content. First, you need to know what sites you’ll want the Content Aggregator to get content from. Then, you can use libraries such as requests for sending HTTP requests and BeautifulSoup to parse and scrape the necessary content from the sites.
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-Your application can implement its content aggregation as a background process. Libraries such as celery or apscheduler can help with that. You can try out apscheduler. It’s great for small background processes.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-After scraping content from various sites, you’ll need to save it somewhere. So, you’ll use a database to save the scraped content.
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+Here's a blank template to get started:
+**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
+`github_username`, `repo`, `twitter_handle`, `email`
+
+
+### Built With
+
+* [Python Flask](https://flask.palletsprojects.com/en/1.1.x/)
+* [BeutifulSoup](https://pypi.org/project/beautifulsoup4/)
+* [Requests](https://pypi.org/project/requests/)
+* [Mongodb](https://www.mongodb.com/cloud/atlas)
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* pip
+```sh
+pip3 install -r requirements.txt
+```
+
+### Installation
+ 
+1. Clone the repo
+```sh
+git https://github.com/eng-aomar/content_aggergator.git
+```
+2. Install requirements packages
+```sh
+pip3 install -r requirements.txt
+```
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/github_username/repo/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
