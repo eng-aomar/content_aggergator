@@ -4,6 +4,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     DEBUG = True
     TESTING = False
+    DB_URI = os.environ.get('DB_URI')
+    
 
     @staticmethod
     def init_app(app):

@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 from DBConnection import Mongodb
 from views.about import about_blueprint
@@ -24,9 +24,9 @@ app.register_blueprint(local_blueprint)
 app.register_blueprint(global_blueprint)
 app.register_blueprint(jobs_blueprint)
 
-# app.config.from_object('config')
-# app.config.from_object(config['development'])
-# config['development'].init_app(app)
+app.config.from_object('config')
+app.config.from_object(config['development'])
+config['development'].init_app(app)
 
 
 # print(f'ENV is set to: {app.config["ENV"]}')
@@ -44,3 +44,21 @@ def load_menus():
     return {'menus_items': menus_items}
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('errors/404.html')
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('errors/500.html')
+
+
+@app.errorhandler(403)
+def page_not_found(e):
+    return render_template('errors/403.html')
+
+
+@app.errorhandler(410)
+def page_not_found(e):
+    return render_template('errors/410.html')

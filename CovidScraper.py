@@ -45,7 +45,7 @@ class BBCCovidScraper:
                 title =BBCCovidScraper.title.split('-')
                 datum['category'] = 'covid'
                 datum['baseurl'] = BBCCovidScraper.URL
-                datum['webname'] = title[0] + ":" + title[1]
+                datum['webname'] = title[0] 
                 datum['title'] = name
                 datum['url'] = url
                 #datum['time'] = date.string
