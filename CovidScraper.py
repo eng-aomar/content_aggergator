@@ -67,6 +67,7 @@ class WhoCovidScraper:
             soup = BeautifulSoup(response.text, 'html.parser')
             response.close()
             links = soup.find_all('a', class_='link-container')
+            
             title = soup.find('title')
             WhoCovidScraper.title = title.string
 
@@ -106,5 +107,5 @@ class WhoCovidScraper:
         return data
 
 
-# articles = WhoCovidScraper.get_content()
+# articles = BBCCovidScraper.get_content()
 # print(articles)

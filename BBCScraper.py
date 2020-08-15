@@ -16,8 +16,9 @@ class BBCScraper:
             soup = BeautifulSoup(response.text, 'html.parser')
             response.close()
 
-            articels_info = soup.find_all('a', class_='Link-sc-1dvfmi3-5 jeUMCT')
-
+            articels_info = soup.find_all(
+                'a', class_='Link-sc-1dvfmi3-5 StyledLink-sc-16i2p1z-2 fdDiSd')
+            #print(articels_info)
  
             BBCScraper.title = soup.find('title').string
 
