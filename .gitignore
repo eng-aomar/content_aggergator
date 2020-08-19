@@ -6,3 +6,7 @@ PrograminLoversScraper
 DownloadData
 CovidMap
 /instance
+/connections/__pycache__
+/modules/__pycache__
+/views/__pycache__
+
