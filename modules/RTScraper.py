@@ -1,8 +1,8 @@
 import requests
 from requests.exceptions import HTTPError
 from bs4 import BeautifulSoup
-from content_aggergator.ScrappedDataClean import DataClean
-from content_aggergator.connections.DBConnection import Mongodb
+from ScrappedDataClean import DataClean
+from connections.DBConnection import Mongodb
 class RTScraper:
     URL = 'https://arabic.rt.com'
     title = ''

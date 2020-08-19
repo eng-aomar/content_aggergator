@@ -1,8 +1,8 @@
 
 from flask import Blueprint, render_template, request
 
-from content_aggergator.modules.CovidScraper import BBCCovidScraper, WhoCovidScraper
-from content_aggergator.connections.DBConnection import Mongodb
+from modules.CovidScraper import BBCCovidScraper, WhoCovidScraper
+from connections.DBConnection import Mongodb
 
 subscribe_blueprint = Blueprint('subscribe', __name__)
 

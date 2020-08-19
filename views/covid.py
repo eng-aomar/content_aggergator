@@ -1,15 +1,15 @@
 from flask import Flask, render_template, Blueprint
 
 
-from content_aggergator.modules.BBCScraper import BBCScraper
-from content_aggergator.modules.MaanScraper import MaanHealthScraper
-from content_aggergator.modules.MOHScraper import CovidPalestine
-from content_aggergator.modules.MaanScraper import MaanNewsScraper
+from modules.BBCScraper import BBCScraper
+from modules.MaanScraper import MaanHealthScraper
+from modules.MOHScraper import CovidPalestine
+from modules.MaanScraper import MaanNewsScraper
 import time
 import concurrent.futures
 
 
-from content_aggergator.modules.CovidScraper import BBCCovidScraper, WhoCovidScraper
+from modules.CovidScraper import BBCCovidScraper, WhoCovidScraper
 
 
 covid = Blueprint('covid', __name__)

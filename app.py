@@ -1,17 +1,17 @@
 from flask import Flask, render_template
 
-from content_aggergator.connections.DBConnection import Mongodb
-from content_aggergator.views.about import about_blueprint
-from content_aggergator.views.covid import covid
-from content_aggergator.views.health import health_blueprint
-from content_aggergator.views.home import home
-from content_aggergator.views.news import news_blueprint
-from content_aggergator.views.subscribe import subscribe_blueprint
-from content_aggergator.views.local import local_blueprint
-from content_aggergator.views.international import global_blueprint
-from content_aggergator.views.jops import jobs_blueprint
-from content_aggergator.views.errors_handler import errors
-from content_aggergator.config import config
+from connections.DBConnection import Mongodb
+from views.about import about_blueprint
+from views.covid import covid
+from views.health import health_blueprint
+from views.home import home
+from views.news import news_blueprint
+from views.subscribe import subscribe_blueprint
+from views.local import local_blueprint
+from views.international import global_blueprint
+from views.jops import jobs_blueprint
+from views.errors_handler import errors
+from config import config
 
 
 

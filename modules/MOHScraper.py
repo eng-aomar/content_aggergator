@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 from requests.exceptions import HTTPError
-from content_aggergator.connections.DBConnection import Mongodb
-from content_aggergator.ScrappedDataClean import DataClean
+from connections.DBConnection import Mongodb
+from ScrappedDataClean import DataClean
 import pandas as pd
 import lxml.html as lh
 

@@ -3,15 +3,15 @@
 from flask import Flask, render_template, request, url_for, Blueprint
 
 
-from content_aggergator.modules.BBCScraper import BBCScraper
-from content_aggergator.modules.MaanScraper import MaanNewsScraper, MaanHealthScraper
-from content_aggergator.modules.MOHScraper import MOHScraper, CovidPalestine
-from content_aggergator.modules.RTScraper import RTScraper
-from content_aggergator.modules.WafaScraper import WafaScraper
-from content_aggergator.modules.WhoScraper import WhoScraper
-from content_aggergator.connections.DBConnection import Mongodb
+from modules.BBCScraper import BBCScraper
+from modules.MaanScraper import MaanNewsScraper, MaanHealthScraper
+from modules.MOHScraper import MOHScraper, CovidPalestine
+from modules.RTScraper import RTScraper
+from modules.WafaScraper import WafaScraper
+from modules.WhoScraper import WhoScraper
+from connections.DBConnection import Mongodb
 
-from content_aggergator.modules.CovidScraper import BBCCovidScraper, WhoCovidScraper
+from modules.CovidScraper import BBCCovidScraper, WhoCovidScraper
 
 import time
 import concurrent.futures

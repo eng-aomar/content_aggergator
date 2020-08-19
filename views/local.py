@@ -1,11 +1,11 @@
 from flask import Flask, render_template, Blueprint
 from requests.exceptions import HTTPError
 
-from content_aggergator.modules.MOHScraper import MOHScraper
-from content_aggergator.modules.MaanScraper import MaanHealthScraper, MaanNewsScraper
-from content_aggergator.modules.WafaScraper import WafaScraper
-from content_aggergator.modules.PalestineTechJobsScraper import PalestineTechJobs
-from content_aggergator.modules.JobsPsScraper import JobsPS
+from modules.MOHScraper import MOHScraper
+from modules.MaanScraper import MaanHealthScraper, MaanNewsScraper
+from modules.WafaScraper import WafaScraper
+from modules.PalestineTechJobsScraper import PalestineTechJobs
+from modules.JobsPsScraper import JobsPS
 import time
 import concurrent.futures
 

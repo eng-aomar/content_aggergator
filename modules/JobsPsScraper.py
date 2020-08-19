@@ -1,7 +1,7 @@
 import requests
 from requests.exceptions import HTTPError
 from bs4 import BeautifulSoup
-from content_aggergator.connections.DBConnection import Mongodb
+from connections.DBConnection import Mongodb
 
 
 class JobsPS:

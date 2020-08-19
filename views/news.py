@@ -1,10 +1,10 @@
 from flask import Flask, render_template, Blueprint
 from requests.exceptions import HTTPError
 
-from content_aggergator.modules.BBCScraper import BBCScraper
-from content_aggergator.modules.MaanScraper import MaanNewsScraper
-from content_aggergator.modules.RTScraper import RTScraper
-from content_aggergator.modules.WafaScraper import WafaScraper
+from modules.BBCScraper import BBCScraper
+from modules.MaanScraper import MaanNewsScraper
+from modules.RTScraper import RTScraper
+from modules.WafaScraper import WafaScraper
 import time
 import concurrent.futures
 
