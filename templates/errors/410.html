@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 {% block title %}Gone{% endblock %}
-{% block body %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+{% endblock %}
+{% block content %}
 <h1>Gone</h1>
 <p>What you were looking for is just not there.
-<p><a href="{{ url_for('home/index') }}">go somewhere nice</a>
-    {% endblock %}
+<p><a href="index">go somewhere nice</a>
+{% endblock %}
