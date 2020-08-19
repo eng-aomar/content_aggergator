@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 from requests.exceptions import HTTPError
-from DBConnection import Mongodb
-from ScrappedDataClean import DataClean
+from content_aggergator.connections.DBConnection import Mongodb
+from content_aggergator.ScrappedDataClean import DataClean
 import pandas as pd
 import lxml.html as lh
 
@@ -56,7 +56,7 @@ class MOHScraper:
 class CovidPalestine:
     URL = 'http://site.moh.ps/index/covid19/'
     title = ''
-
+    articles = []
     @classmethod
     def get_content(cls):
         try:

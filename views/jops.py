@@ -1,8 +1,8 @@
 from flask import Flask, render_template, Blueprint
 from requests.exceptions import HTTPError
 
-from PalestineTechJobsScraper import PalestineTechJobs
-from JobsPsScraper import JobsPS
+from content_aggergator.modules.PalestineTechJobsScraper import PalestineTechJobs
+from content_aggergator.modules.JobsPsScraper import JobsPS
 import time
 import threading
 

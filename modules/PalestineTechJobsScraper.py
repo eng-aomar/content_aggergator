@@ -1,13 +1,13 @@
 import requests
 from requests.exceptions import HTTPError
 from bs4 import BeautifulSoup
-from DBConnection import Mongodb
+from content_aggergator.connections.DBConnection import Mongodb
 
 
 class PalestineTechJobs:
     URL = 'https://palestinetechjobs.com'
     title = ''
-
+    articles = []
     @classmethod
     def get_content(cls):
         try:
@@ -19,18 +19,24 @@ class PalestineTechJobs:
             PalestineTechJobs.title = title.string
             articels_info = soup.find_all('div', class_='panel_has_logo')
             #print(articels_info)
-            articles = PalestineTechJobs.fetch_articles(articels_info)
-            Mongodb.insert_articles(articles)
+            if articels_info:
 
+                PalestineTechJobs.articles = PalestineTechJobs.fetch_articles(
+                articels_info)
+                Mongodb.insert_articles(PalestineTechJobs.articles)
+            else:
+                PalestineTechJobs.get_latest_ten_articles()
             response.raise_for_status()
 
         except HTTPError as http_err:
+            PalestineTechJobs.get_latest_ten_articles()
             print(f'HTTP error occurred: {http_err}')  # Python 3.6
         except Exception as err:
+            PalestineTechJobs.get_latest_ten_articles()
             print(f'Other error occurred: {err}')  # Python 3.6
         else:
             print('PalestineTechJobs Success!')
-        return articles
+        return PalestineTechJobs.articles
 
     @staticmethod
     def fetch_articles(articels_info):
@@ -55,5 +61,9 @@ class PalestineTechJobs:
                 continue
         return data
 
+    @staticmethod
+    def get_latest_ten_articles():
+        db = Mongodb.db_connect()
+        PalestineTechJobs.articles = Mongodb.find_by(JobsPS.URL, db['articles'])
 # articles = PalestineTechJobs.get_content()
 # print(articles)

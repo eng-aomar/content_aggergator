@@ -1,10 +1,11 @@
 import requests
 from requests.exceptions import HTTPError
 from bs4 import BeautifulSoup
-from DBConnection import Mongodb
+from content_aggergator.connections.DBConnection import Mongodb
 class WafaScraper:
     URL = 'http://www.wafa.ps'
-    title =''
+    title = ''
+    articles = []
     @classmethod
     def get_content(cls):
         try:
@@ -14,19 +15,24 @@ class WafaScraper:
             title = soup.find('title')
             WafaScraper.title = title.string
             articels_info = soup.find_all('a', class_='latestnews')
-            articles = WafaScraper.fetch_articles(articels_info)
-            Mongodb.insert_articles(articles)
+            if articels_info:
+                WafaScraper.articles = WafaScraper.fetch_articles(articels_info)
+                Mongodb.insert_articles(WafaScraper.articles)
+            else:
+                WafaScraper.get_latest_ten_articles()
 
 
             response.raise_for_status()
 
         except HTTPError as http_err:
+            WafaScraper.get_latest_ten_articles()
             print(f'HTTP error occurred: {http_err}')  # Python 3.6
         except Exception as err:
+            WafaScraper.get_latest_ten_articles()
             print(f'Other error occurred: {err}')  # Python 3.6
         else:
             print('WafaScraper Success!')
-        return  articles
+        return WafaScraper.articles
 
 
     @staticmethod
@@ -51,6 +57,11 @@ class WafaScraper:
             #     continue
         return data
 
+    @staticmethod
+    def get_latest_ten_articles():
+        db = Mongodb.db_connect()
+        WafaScraper.articles = Mongodb.find_by(
+            WafaScraper.URL, db['articles'])
 
 # art = WafaScraper.get_content()
 # print(art)

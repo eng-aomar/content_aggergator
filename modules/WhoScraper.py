@@ -1,11 +1,12 @@
 import requests
 from requests.exceptions import HTTPError
 from bs4 import BeautifulSoup
-from ScrappedDataClean import DataClean
-from DBConnection import Mongodb
+from content_aggergator.ScrappedDataClean import DataClean
+from content_aggergator.connections.DBConnection import Mongodb
 class WhoScraper:
     URL = 'https://www.who.int/ar'
     title = ''
+    articles = []
     @classmethod
     def get_content(cls):
         try:
@@ -16,10 +17,14 @@ class WhoScraper:
 
             articels_info = soup.find_all(
                 'div', class_='list-view--item horizontal-list-item matching-height--item')
- 
-            WhoScraper.title = DataClean.clean_string(soup.find('title').string)
-            articles = WhoScraper.fetch_articles(articels_info)
-            Mongodb.insert_articles(articles)
+            if articels_info:
+
+                WhoScraper.title = DataClean.clean_string(soup.find('title').string)
+                WhoScraper.articles = WhoScraper.fetch_articles(articels_info)
+                Mongodb.insert_articles(WhoScraper.articles)
+            else:
+                WhoScraper.get_latest_ten_articles()
+
             response.raise_for_status()
 
         except HTTPError as http_err:
@@ -28,7 +33,7 @@ class WhoScraper:
             print(f'Other error occurred: {err}')  # Python 3.6
         else:
             print('whoScraper Success!')
-        return articles
+        return WhoScraper.articles
 
 
     @staticmethod
@@ -53,6 +58,10 @@ class WhoScraper:
             data.append(datum)
         return data
 
+    @staticmethod
+    def get_latest_ten_articles():
+        db = Mongodb.db_connect()
+        WhoScraper.articles = Mongodb.find_by(
+            WhoScraper.URL, db['articles'])
 
-#atricle = WhoScraper.get_content()
-# print(atricle)
+

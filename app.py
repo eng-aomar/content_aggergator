@@ -1,19 +1,25 @@
 from flask import Flask, render_template
 
-from DBConnection import Mongodb
-from views.about import about_blueprint
-from views.covid import covid
-from views.health import health_blueprint
-from views.home import home
-from views.news import news_blueprint
-from views.subscribe import subscribe_blueprint
-from views.local import local_blueprint
-from views.international import global_blueprint
-from views.jops import jobs_blueprint
-from config import config
+from content_aggergator.connections.DBConnection import Mongodb
+from content_aggergator.views.about import about_blueprint
+from content_aggergator.views.covid import covid
+from content_aggergator.views.health import health_blueprint
+from content_aggergator.views.home import home
+from content_aggergator.views.news import news_blueprint
+from content_aggergator.views.subscribe import subscribe_blueprint
+from content_aggergator.views.local import local_blueprint
+from content_aggergator.views.international import global_blueprint
+from content_aggergator.views.jops import jobs_blueprint
+from content_aggergator.views.errors_handler import errors
+from content_aggergator.config import config
+
 
 
 app = Flask(__name__, instance_relative_config=True)
+app.config.from_object(config['development'])
+
+
+
 app.register_blueprint(home)
 app.register_blueprint(news_blueprint)
 app.register_blueprint(about_blueprint)
@@ -23,10 +29,10 @@ app.register_blueprint(health_blueprint)
 app.register_blueprint(local_blueprint)
 app.register_blueprint(global_blueprint)
 app.register_blueprint(jobs_blueprint)
-
-app.config.from_object('config')
-app.config.from_object(config['development'])
-config['development'].init_app(app)
+app.register_blueprint(errors)
+# app.config.from_object('config')
+# app.config.from_object(config['development'])
+# config['development'].init_app(app)
 
 
 # print(f'ENV is set to: {app.config["ENV"]}')
@@ -44,21 +50,6 @@ def load_menus():
     return {'menus_items': menus_items}
 
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('errors/404.html')
 
 
-@app.errorhandler(500)
-def internal_server_error(e):
-    return render_template('errors/500.html')
 
-
-@app.errorhandler(403)
-def page_not_found(e):
-    return render_template('errors/403.html')
-
-
-@app.errorhandler(410)
-def page_not_found(e):
-    return render_template('errors/410.html')

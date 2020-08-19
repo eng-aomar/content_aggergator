@@ -1,10 +1,10 @@
 from flask import Flask, render_template, Blueprint
 from requests.exceptions import HTTPError
 
-from WhoScraper import WhoScraper
-from MaanScraper import MaanHealthScraper
-from MOHScraper import MOHScraper
-from CovidScraper import BBCCovidScraper, WhoCovidScraper
+from content_aggergator.modules.WhoScraper import WhoScraper
+from content_aggergator.modules.MaanScraper import MaanHealthScraper
+from content_aggergator.modules.MOHScraper import MOHScraper
+from content_aggergator.modules.CovidScraper import BBCCovidScraper, WhoCovidScraper
 import concurrent.futures
 import time
 health_blueprint = Blueprint('health', __name__)

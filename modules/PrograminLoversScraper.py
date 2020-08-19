@@ -27,7 +27,7 @@ class PalestineTechJobs:
         except Exception as err:
             print(f'Other error occurred: {err}')  # Python 3.6
         else:
-            print('Success!')
+            print('PalestineTechJobs Success!')
         return articles
 
     @staticmethod

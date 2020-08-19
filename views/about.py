@@ -1,6 +1,6 @@
 from flask import Flask, render_template, Blueprint, request
-from DBConnection import Mongodb
-from SendEmail import MyMail
+from content_aggergator.connections.DBConnection import Mongodb
+from content_aggergator.SendEmail import MyMail
 
 about_blueprint = Blueprint('about', __name__)
 

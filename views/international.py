@@ -3,11 +3,11 @@
 from flask import Flask, render_template, request, url_for, Blueprint
 
 
-from BBCScraper import BBCScraper
-from RTScraper import RTScraper
-from WhoScraper import WhoScraper
-from DBConnection import Mongodb
-from CovidScraper import BBCCovidScraper
+from content_aggergator.modules.BBCScraper import BBCScraper
+from content_aggergator.modules.RTScraper import RTScraper
+from content_aggergator.modules.WhoScraper import WhoScraper
+from content_aggergator.connections.DBConnection import Mongodb
+from content_aggergator.modules.CovidScraper import BBCCovidScraper
 import time
 import concurrent.futures
 
