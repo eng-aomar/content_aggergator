@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}تواصل معنا{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% block content %}
+<div class="container bg1">
+    <legend class="h1 text-center ">Contact Us</legend>
+    <div class="container wrapper">
+        <form class="form-horizontal" role="form" method="POST" action="{{ url_for('.about') }}">
+
+            <div class="form-group">
+                <!-- <label class="control-label col-sm-2" for="name"><span class="required">*</span>Name:</label> -->
+                <div class="col-sm-10 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="fullname" id="fname" type="text" required class="form-control" id="name"
+                            placeholder="Your full name" title="name">
+                    </div>
+                </div>
+            </div>
+            <!--Email Address-->
+
+            <div class="form-group">
+                <!-- <label class="control-label col-sm-2" for="Email"><span class="required">*</span>Email Address:</label> -->
+                <div class="col-sm-10 inputGroupContainer">
+                    <div class="input-group"> <span class="input-group-addon"><i
+                                class="glyphicon glyphicon-envelope"></i></span>
+                        <input name="Email" type="email" required class="form-control" id="email"
+                            placeholder="your@email.com.au" title="Email">
+                    </div>
+                </div>
+            </div>
+
+            <!--Phone Optional-->
+            <div class="form-group">
+                <!-- <label class="control-label col-sm-2" for="Phone">Phone #:</label> -->
+                <div class="col-sm-10 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input name="Phone" type="phone" class="form-control" id="phone" placeholder="Optional"
+                            title="Phone no."></span>
+                    </div>
+                </div>
+            </div>
+            <!--Text Area-->
+            <div class="form-group">
+                <!-- <label class="control-label col-sm-2" for="message"><span class="required">*</span>Message:</label> -->
+                <div class="col-sm-10 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+
+                        <textarea class="form-control" name="subject" rows="4" required  placeholder="Type your message here."></textarea>
+                            
+                    </div>
+                </div>
+            </div>
+
+            <!-- Human validation-->
+            <!-- <div class="form-group">
+               <label for="human" class="col-sm-2 control-label"><span class="required">*</span> Human Test:</label> -->
+                <!-- <div class="col-sm-10 inputGroupContainer"> -->
+                    <!-- <h3 class="human">6 + 6 = ?</h3>
+                    <input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
+                    <span class="required small"></span> -->
+                <!-- </div>
+            </div>  -->
+
+            <!--SEND Button-->
+
+            <div class="form-group">
+                <!-- <label class="col-sm-2 control-label"></label> -->
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-warning">send <span class="glyphicon glyphicon-send"></span>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}

@@ -1,190 +1,234 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 {% block title %}الصفحة الرئيسية{% endblock %}
 {% block head %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 {% block content %}
-<hr class="rounded">
-<div class="row">
-    <div class="column">
-        <div class="card">
-            <div class="heading">
-                <a href="{{wafa_articles[0]['baseurl']}}" target="_blank"><span class="ellip ellip-line">{{wafa_articles[0]['webname']}}</span></a>
-            </div>
-            <div class="scrollable ">
-            <h3>
-                <p class="list-style">
-                <ul>
-                    {% for article in wafa_articles %}
-                    <li>
-                        <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                </p>
-            </h3>
-            </div>
-        </div>
+<div class="jumbotron">
+    <div class="container">
+        <h1>مرحبا جميعا</h1>
+        <p>
+            يحتوى هذا الموقع على أخبار منوعة من وكالات انباء محلية وعالمية موثوقة، لتصفح اسهل واسرع وضعنا جميع الاخبار
+            بين يديك، نرجو ان ينال هذا الموقع اعاجبكم.
+
+        </p>
+        <h2>كل ما يهمك ... في مكان واحد</h2>
+        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">أرسل اقتراحك &raquo;</a></p> -->
     </div>
-    <div class="column">
-        <div class="card">
-            <div class="heading">
-                <a href="{{maan_articles[0]['baseurl']}}" target="_blank"><span class="ellip ellip-line">{{maan_articles[0]['webname']}}</span></a>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">آخر الاخبار</h3>
             </div>
-            <div class="scrollable ">
-            <h3>
-                 <p class="list-style">
-                <ul>
-                    {% for article in maan_articles %}
-                    <li>
-                        <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                </p>
-            </h3>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <div class="heading">
-                <a href="{{rt_articles[0]['baseurl']}}" target="_blank">
-                    <span class="ellip ellip-line">{{rt_articles[0]['webname']}}</span>
+            <div class="panel-body">
+
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail">
+                        <a href="{{maan_articles[0]['baseurl']}}" target="_blank">
+                            <img class="image-thumbnail" src="../../static/imgs/logos/logo.png" alt="Maan Logo">
+                        </a>
+                        <div class="caption">
+                            <div class="list-group">
+                                <a href="{{maan_articles[0]['baseurl']}}" class="list-group-item active"
+                                    target="_blank">
+                                    {{maan_articles[0]['webname']}}
+                                </a>
+                                <div class="scrollable">
+                                    {% for article in maan_articles %}
+                                    <a href="{{article['url']}}" class="list-group-item"
+                                        target="_blank">{{article['title']}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail">
+                        <a href="{{rt_articles[0]['baseurl']}}" target="_blank">
+                            <img class="image-thumbnail" src="../../static/imgs/logos/rt-logo.png" alt="Maan Logo">
+                        </a>
+                        <div class="caption">
+                            <div class="list-group">
+                                <a href="{{rt_articles[0]['baseurl']}}" class="list-group-item active" target="_blank">
+                                    {{rt_articles[0]['webname']}}
+                                </a>
+                                <div class="scrollable">
+                                    {% for article in rt_articles %}
+                                    <a href="{{article['url']}}" class="list-group-item"
+                                        target="_blank">{{article['title']}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail">
+                        <a href="{{wafa_articles[0]['baseurl']}}" target="_blank">
+                            <img class="image-thumbnail" src="../../static/imgs/logos/wafa-logo.png" alt="Maan Logo">
+                        </a>
+                        <div class="caption">
+                            <div class="list-group">
+                                <a href="{{wafa_articles[0]['baseurl']}}" class="list-group-item active"
+                                    target="_blank">
+                                    {{wafa_articles[0]['webname']}}
+                                </a>
+                                <div class="scrollable">
+                                    {% for article in wafa_articles %}
+                                    <a href="{{article['url']}}" class="list-group-item"
+                                        target="_blank">{{article['title']}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- 
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">آخر الاخبار</h3>
+                    </div>
+                    <div class="panel-body"> -->
+
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="thumbnail">
+                <a href="{{bbc_articles[0]['baseurl']}}" target="_blank">
+                    <img class="image-thumbnail" src="../../static/imgs/logos/bbc-logo.png" alt="Maan Logo">
                 </a>
-            </div>
-            <div class="scrollable ">
-                <h3>
-                    <p class="list-style">
-                    <ul>
-                        {% for article in rt_articles %}
-                        <li>
-                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    </p>
-                </h3>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <div class="heading">
-                <a href="{{bbc_articles[0]['baseurl']}}" target="_blank"><span class="ellip ellip-line">{{bbc_articles[0]['webname']}}</span></a>
-            </div>
-            <div class="scrollable ">
-            <h3>
-                <p class="list-style">
-                <ul>
-                    {% for article in bbc_articles %}
-            
-                    <li>
-                        <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
-                    </li>
-            
-                    {% endfor %}
-                </ul>
-                </p>
-            </h3>
+                <div class="caption">
+                    <div class="list-group">
+                        <a href="{{bbc_articles[0]['baseurl']}}" class="list-group-item active" target="_blank">
+                            {{bbc_articles[0]['webname']}}
+                        </a>
+                        <div class="scrollable">
+                            {% for article in bbc_articles %}
+                            <a href="{{article['url']}}" class="list-group-item"
+                                target="_blank">{{article['title']}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="thumbnail">
+                <a href="{{who_articles[0]['baseurl']}}" target="_blank">
+                    <img class="image-thumbnail" src="../../static/imgs/logos/who-logo.jpg" alt="WHO Logo">
+                </a>
+                <div class="caption">
+                    <div class="list-group">
+                        <a href="{{who_articles[0]['baseurl']}}" class="list-group-item active" target="_blank">
+                            {{who_articles[0]['webname']}}
+                        </a>
+                        <div class="scrollable">
+                            {% for article in who_articles %}
+                            <a href="{{article['url']}}" class="list-group-item"
+                                target="_blank">{{article['title']}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="thumbnail">
+                <a href="{{wafa_articles[0]['baseurl']}}" target="_blank">
+                    <img class="image-thumbnail" src="../../static/imgs/logos/wafa-logo.png" alt="Maan Logo">
+                </a>
+                <div class="caption">
+                    <div class="list-group">
+                        <a href="{{wafa_articles[0]['baseurl']}}" class="list-group-item active" target="_blank">
+                            {{wafa_articles[0]['webname']}}
+                        </a>
+                        <div class="scrollable">
+                            {% for article in wafa_articles %}
+                            <a href="{{article['url']}}" class="list-group-item"
+                                target="_blank">{{article['title']}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="thumbnail">
+                <a href="{{maan_health[0]['baseurl']}}" target="_blank">
+                    <img class="image-thumbnail" src="../../static/imgs/logos/logo.png" alt="Maan Logo">
+                </a>
+                <div class="caption">
+                    <div class="list-group">
+                        <a href="{{maan_health[0]['baseurl']}}" class="list-group-item active" target="_blank">
+                            {{maan_health[0]['webname']}}
+                        </a>
+                        <div class="scrollable">
+                            {% for article in maan_health %}
+                            <a href="{{article['url']}}" class="list-group-item" target="_blank">{{article['title']}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="thumbnail">
+                <a href="{{bbc_health[0]['baseurl']}}" target="_blank">
+                    <img class="image-thumbnail" src="../../static/imgs/logos/bbc-logo.png" alt="BBC Logo">
+                </a>
+                <div class="caption">
+                    <div class="list-group">
+                        <a href="{{bbc_health[0]['baseurl']}}" class="list-group-item active" target="_blank">
+                            {{bbc_health[0]['webname']}}
+                        </a>
+                        <div class="scrollable">
+                            {% for article in bbc_health %}
+                            <a href="{{article['url']}}" class="list-group-item" target="_blank">{{article['title']}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="thumbnail">
+                <a href="{{moh_articles[0]['baseurl']}}" target="_blank">
+                    <img class="image-thumbnail" src="../../static/imgs/logos/who-logo.jpg" alt="WHO Logo">
+                </a>
+                <div class="caption">
+                    <div class="list-group">
+                        <a href="{{moh_articles[0]['baseurl']}}" class="list-group-item active" target="_blank">
+                            {{bbc_health[0]['webname']}}
+                        </a>
+                        <div class="scrollable">
+                            {% for article in moh_articles %}
+                            <a href="{{article['url']}}" class="list-group-item" target="_blank">{{article['title']}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div>
+                </div> -->
+                            </div>
+                            </div>
     </div>
 </div>
 
-<!-- puplic heath website -->
-<hr class="rounded">
-<div class="row">
-    <div class="column">
-        <div class="card">
-            <div class="heading">
-                <a href="{{who_articles[0]['baseurl']}}" target="_blank"><span class="ellip ellip-line">{{who_articles[0]['webname']}}</span></a>
-                
-            </div>
-            <div class="scrollable ">
-                <h3>
-                    <p class="list-style">
-                    <ul>
-                        {% for article in who_articles %}
-                        <li>
-                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    </p>
-                </h3>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <div class="heading">
-                <a href="{{maan_health[0]['baseurl']}}" target="_blank"><span class="ellip ellip-line">{{maan_health[0]['webname']}}</span></a>
-            </div>
-            <div class="scrollable ">
-                <h3>
-                    <p class="list-style">
-                    <ul>
-                        {% for article in maan_health %}
-                        <li>
-                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    </p>
-                </h3>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <div class="heading">
-                <a href="{{bbc_health[0]['baseurl']}}" target="_blank"><span class="ellip ellip-line">{{bbc_health[0]['webname']}}</span></a>
-            </div>
-            <div class="scrollable ">
-                <h3>
-                    <p class="list-style">
-                    <ul>
-                        {% for article in bbc_health %}
-                        <li>
-                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    </p>
-                </h3>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <div class="heading">
-                <a href="{{moh_articles[0]['baseurl']}}" target="_blank"><span class="ellip ellip-line">{{moh_articles[0]['webname']}}</span></a>
-            </div>
-            <div class="scrollable ">
-                <h3>
-                    <p class="list-style">
-                    <ul>
-                        {% for article in moh_articles %}
+<hr>
 
-                        <li>
-                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
-                        </li>
-
-                        {% endfor %}
-                    </ul>
-                    </p>
-                </h3>
-            </div>
-        </div>
-    </div>
-</div>
-<hr class="rounded">
-<!-- Jobs -->
 
 
 {% endblock %}
-
-
-

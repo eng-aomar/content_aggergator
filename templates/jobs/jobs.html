@@ -1,53 +1,59 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 {% block title %}وظائف في فلسطين{% endblock %}
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/jobs.css') }}">
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/jobs.css') }}"> -->
 {% endblock %}
 {% block content %}
-<hr class="rounded">
-<div class="row">
-    <div class="column">
-        <div class="card">
-            <div class="heading">
-                <a href="{{jobs_articles[0]['baseurl']}}" target="_blank"><span
-                        class="ellip ellip-line">{{jobs_articles[0]['webname']}}</span></a>
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">آخر اعلانات الوظائف في فلسطين </h3>
             </div>
-            <div class="scrollable ">
-                <h3>
-                    <p class="list-style">
-                    <ul>
-                        {% for article in jobs_articles %}
-                        <li>
-                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    </p>
-                </h3>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <div class="heading">
-                <a href="{{tech_jobs_articles[0]['baseurl']}}" target="_blank"><span
-                        class="ellip ellip-line">{{tech_jobs_articles[0]['webname']}}</span></a>
-            </div>
-            <div class="scrollable ">
-                <h3>
-                    <p class="list-style">
-                    <ul>
-                        {% for article in tech_jobs_articles %}
-                        <li>
-                            <a href="{{article['url']}}" target="_blank">{{article['title']}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    </p>
-                </h3>
-            </div>
-        </div>
+            <div class="panel-body">
+                <div class=" col-sm-6 col-xs-12">
+                    <div class="thumbnail">
+                        <a href="{{jobs_articles[0]['baseurl']}}" target="_blank">
+                            <img class="image-thumbnail" src="../../static/imgs/logos/jobs-logo.png" alt="Jobs Logo" />
+                        </a>
+                        <div class="caption">
+                            <div class="list-group">
+                                <a href="{{jobs_articles[0]['baseurl']}}" class="list-group-item active" target="_blank">
+                                    {{jobs_articles[0]['webname']}}
+                                </a>
+                                <div class="scrollable">
+                                    {% for article in jobs_articles %}
+                                    <a href="{{article['url']}}" class="list-group-item"
+                                        target="_blank">{{article['title']}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-sm-6 col-xs-12">
+                    <div class="thumbnail">
+                        <a href="{{tech_jobs_articles[0]['baseurl']}}" target="_blank">
+                            <img class="image-thumbnail" src="../../static/imgs/logos/tech-jobs-logo.svg" alt="BBC Logo" />
+                        </a>
+                        <div class="caption">
+                            <div class="list-group">
+                                <a href="{{tech_jobs_articles[0]['baseurl']}}" class="list-group-item active" target="_blank">
+                                    {{tech_jobs_articles[0]['webname']}}
+                                </a>
+                                <div class="scrollable">
+                                    {% for article in tech_jobs_articles %}
+                                    <a href="{{article['url']}}" class="list-group-item"
+                                        target="_blank">{{article['title']}}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+        {% endblock %}
     </div>
 </div>
-{% endblock %}

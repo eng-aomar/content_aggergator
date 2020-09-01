@@ -1,191 +1,58 @@
-/* body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-} */
-
-html {
-  box-sizing: border-box;
+*{
+	direction:ltr;
+	
+}
+.container legend {
+	margin-top: 35px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #EB771F;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 
-.column {
-  float: left !important;
-  width: 40%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
+.bg1 {
+  background-color: #e7e7e7;
+  margin-top:60px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-.crd{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-  height: 880px;
-}
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-  direction: ltr;
-  position: relative;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-  font-size: larger;
-  font-weight: bold;
-}
-.bio{
-    width: 90%;
-    font-size: large;
-    text-align: justify;
-    font-weight: bold;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
-
-.button:hover {
-  background-color: #555;
-}
-
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
-
-/******************/
-
-/* Style inputs */
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=submit] {
-  background-color: #b20000;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-/* Style the container/contact section */
-.cnot {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 10px;
-}
-
-/* Create two columns that float next to eachother */
-.clmn {
-  
-  width: 50%;
-  /* margin-top: 6px;
-  padding: 20px; */
-}
-/* 
-/* Clear floats after the columns */
-/* .rw:after {
-  content: "";
-  display: table;
-  clear: both;
-} */ 
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
-
-
-/* Social Media */
-/* Style the icon bar links */
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 20px;
 
 }
 
-/* Style the social media icons with color, if you want */
-.icon-bar a:hover {
-  background-color: #000;
+.navbar-header .navbar-brand .img-responsive {
+	width: 100px;
+	height: auto;
+	margin-left: 25px;
 }
 
-.facebook {
-  background: #3B5998;
-  color: white;
+.container .navbar-header .navbar-brand {
+	height: 90px;
 }
 
-.twitter {
-  background: #55ACEE;
-  color: white;
+.container.nav #defaultNavbar1 .nav.navbar-nav.navbar-right {
+	margin-top: 25px;
 }
 
-.google {
-  background: #dd4b39;
-  color: white;
+nav .container {
+	background-color: #262626;
 }
 
-.linkedin {
-  background: #007bb5;
-  color: white;
-}
-.github {
-  background: #000;
-  color: white;
-}
-.github a:hover {
-  background-color: #ccc;
+div.copyright {
+	color: #f2f2f2;
 }
 
-.icon-bar{
-  position: absolute;
-  right:0 ;
-  top: 150px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+footer {
+	height: 50px;
+	width: 100%;
+	align-content: center;
+	font-size: 10px;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	padding-top: 20px;
+	padding-bottom: auto;
+	background-color: #2F2F2F;
 }
+
+.form-horizontal {
+	width: 85%;
+	margin: 0 auto 0 auto;
+	padding: 10px;
+}
+	

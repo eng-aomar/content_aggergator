@@ -1,11 +1,30 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 {% block title %}Internal Server Error{% endblock %}
 {% block head %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
 {% endblock %}
 {% block content %}
-<h1>Internal Server Error</h1>
-<p>What you were looking for is just not there.
-<p><a href="index">go somewhere nice</a>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="error-template">
+                    <h1>
+                        Oops!</h1>
+                    <h2>
+                        500 Not Found</h2>
+                    <div class="error-details">
+                        Sorry, An internal error has occured!
+                    </div>
+                    <div class="error-actions">
+                        <a href="index" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
+                            Take Me Home </a><a href="about" class="btn btn-default btn-lg"><span
+                                class="glyphicon glyphicon-envelope"></span> Contact Support </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

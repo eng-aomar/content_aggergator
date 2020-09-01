@@ -30,7 +30,7 @@ def load_home():
 
     finish = time.perf_counter()  # end timer
     print(f"Finished in {round(finish-start,2)} seconds")
-    
+    # return render_template("home/home.html", maan_articles=maan_articles, wafa_articles=wafa_articles, rt_articles=rt_articles, bbc_articles=bbc_articles, who_articles=who_articles)
     return render_template("home/index.html",
                             wafa_articles=wafa_articles,
                             maan_articles=maan_articles,

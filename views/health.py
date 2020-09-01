@@ -22,11 +22,11 @@ def health():
         who_articles = f1.result()
         maan_health = f2.result()
         moh_articles = f3.result()
-        bbc_articles = f4.result()
+        bbc_health = f4.result()
     finish = time.perf_counter()  # end timer
     print(f"Finished in {round(finish-start,2)} seconds")
     return render_template("health/health.html",
                            who_articles=who_articles,
                            maan_health=maan_health,
                            moh_articles=moh_articles,
-                           bbc_articles=bbc_articles)
+                           bbc_health=bbc_health)

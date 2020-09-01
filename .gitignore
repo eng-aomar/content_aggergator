@@ -9,4 +9,7 @@ CovidMap
 /connections/__pycache__
 /modules/__pycache__
 /views/__pycache__
-
+layout.html
+index-old.html
+about.html
+/static/css/mainold.css
