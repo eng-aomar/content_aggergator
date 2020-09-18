@@ -72,8 +72,11 @@ git https://github.com/eng-aomar/content_aggergator.git
 ```sh
 pip3 install -r requirements.txt
 ```
-
-
+3. Add enviromntal variables for Mogodb connection:
+```
+    Variable Name :DB_URI
+    Vraiable Value: your connection string
+```
 <!-- USAGE EXAMPLES -->
 ## Usage
 
