@@ -52,6 +52,7 @@ Here's a blank template to get started:
 <!-- GETTING STARTED -->
 ## Getting Started
 
+
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
